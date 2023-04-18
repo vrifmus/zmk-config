@@ -52,10 +52,10 @@
 // |  -   |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |  =   |
 //                    | ESC | TAB | SPC |   | ENT | BKSP | DEL |
                         bindings = <
-   &kp LBKT       &kp Q      &kp W      &kp E       &kp R         &kp T             &kp Y         &kp U          &kp I        &kp O        &kp P         &kp RBKT
-   &tt SWAP GRAVE &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F   &kp G             &kp H         &hm RSHFT J    &hm RCTRL K  &hm RALT L   &hm RGUI SEMI &kp SQT
-   &kp MINUS      &kp Z      &kp X      &kp C       &kp V         &kp B             &kp N         &kp M          &kp COMMA    &kp      DOT &kp FSLH      &kp EQUAL
-                                        &tt FN ESC  &tt EXTRA TAB &tt LOWER SPACE   &tt RAISE RET &tt MEDIA BSPC &kp DEL
+   &kp LBKT   &kp Q      &kp W      &kp E       &kp R         &kp T             &kp Y         &kp U          &kp I        &kp O        &kp P         &kp RBKT
+   &kp GRAVE  &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F   &kp G             &kp H         &hm RSHFT J    &hm RCTRL K  &hm RALT L   &hm RGUI SEMI &kp SQT
+   &kp MINUS  &tt SWAP Z &kp X      &kp C       &kp V         &kp B             &kp N         &kp M          &kp COMMA    &kp DOT      &kp FSLH      &kp EQUAL
+                                    &tt FN ESC  &tt EXTRA TAB &tt LOWER SPACE   &tt RAISE RET &tt MEDIA BSPC &kp DEL
                         >;
                 };
 
@@ -71,18 +71,19 @@
    &kp UNDER &none    &none  &none    &none    &none      &none          &none    &kp LT    &kp GT    &kp QMARK &kp PLUS
                              &trans   &trans   &trans     &tt ADJUST RET &trans   &trans
                         >;
+
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  {   |     |     |     |     |     |   |     |     |     |     |     |   }  |
 // |  ~   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |   \  |
-// |  _   |     |     |     |     |     |   |     |     |     |     |     |   +  |
+// |  _   |     |     |     |     |     |   |     |     |  ,  |  .  |     |   +  |
 //                    |     |     | ADJ |   |     |     |     |
                         bindings = <
-   &kp LBRC  &none  &none  &none  &none  &none             &none  &none  &none  &none  &none  &kp RBRC
-   &kp TILDE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5            &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
-   &kp UNDER &none  &none  &none  &none  &none             &none  &none  &none  &none  &none  &kp PLUS
+   &kp LBRC  &none  &none  &none  &none  &none             &none  &none  &none      &none    &none  &kp RBRC
+   &kp TILDE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5            &kp N6 &kp N7 &kp N8     &kp N9   &kp N0 &kp BSLH
+   &kp UNDER &none  &none  &none  &none  &none             &none  &none  &kp COMMA  &kp DOT  &none  &kp PLUS
                            &trans &trans &tt ADJUST SPACE  &trans &trans &trans
                         >;
                 };
@@ -103,15 +104,15 @@
 
                 extra_layer {
 // -----------------------------------------------------------------------------------------
-// | APP  |     |<DESK|TASKV|DESK>|     |   |     | PGUP|  UP | PGDN| SLCK|  APP |
-// | TERM | GUI | ALT | CTRL| SHFT|     |   |PSCRN| LFT | DWN | RGT | CLCK| PAUSE|
-// |      |     |     |     |     |     |   |     | HOME| INS | END | NLCK|      |
-//                    |     |     |     |   |     |     |     |
+// | APP |     |<DESK|TASKV|DESK>|     |   |     | PGUP|  UP | PGDN| SLCK|  APP |
+// |     | GUI | ALT | CTRL| SHFT|     |   |PSCRN| LFT | DWN | RGT | CLCK| PAUSE|
+// |     | TRM |     |     |     |     |   |     | HOME| INS | END | NLCK|      |
+//                   |     |     |     |   |     |     |     |
                         bindings = <
-   &kp K_APP     &none    &kp LG(LC(LEFT)) &kp LG(TAB)  &kp LG(LC(RIGHT)) &none   &none     &kp PG_UP &kp UP   &kp PG_DN &kp SLCK    &kp K_APP
-   &kp LC(GRAVE) &kp LGUI &kp LALT         &kp LCTRL    &kp LSHFT         &none   &kp PSCRN &kp LEFT  &kp DOWN &kp RIGHT &kp CLCK    &kp PAUSE_BREAK
-   &none         &none    &none            &none        &none             &none   &none     &kp HOME  &kp INS  &kp END   &kp KP_NLCK &none
-                                           &trans       &trans            &trans  &trans    &trans    &trans &trans
+   &kp K_APP  &kp LC(GRAVE) &kp LG(LC(LEFT)) &kp LG(TAB)  &kp LG(LC(RIGHT)) &none   &none     &kp PG_UP &kp UP   &kp PG_DN &kp SLCK    &kp K_APP
+   &none      &kp LGUI      &kp LALT         &kp LCTRL    &kp LSHFT         &none   &kp PSCRN &kp LEFT  &kp DOWN &kp RIGHT &kp CLCK    &kp PAUSE_BREAK
+   &none      &none         &none            &none        &none             &none   &none     &kp HOME  &kp INS  &kp END   &kp KP_NLCK &none
+                                             &trans       &trans            &trans  &trans    &trans    &trans &trans
                         >;
                 };
 
