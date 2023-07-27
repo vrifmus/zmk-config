@@ -1,14 +1,10 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+// Copyright (c) 2022 The ZMK Contributors
+// SPDX-License-Identifier: MIT
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LGUI k1   &ht LALT k2   &ht LCTRL k3  &ht LSHFT k4
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3   &ht RGUI k4
 #define TERM &kp LC(GRAVE)
@@ -68,10 +64,10 @@
 //                         | ESC   |  TAB  |  SPC  |     |  ENT  |  BKSP |  DEL  |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-        &kp LBKT    &kp Q       &kp W   &kp E       &kp R        &kp T             &kp Y        &kp U           &kp I      &kp O    &kp P     &kp RBKT
-        &kp GRAVE   HRML(A,     S,      D,          F)           &kp G             &kp H        HRMR(J,         K,         L,       SEMI)     &kp SQT
-        &kp MINUS   &tt SWAP Z  &kp X   &kp C       &kp V        &kp B             &kp N        &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
-                                        &tt FN ESC  &tt EXT TAB  &tt LWR SPACE     &tt RSE RET  &tt MEDIA BSPC  &tt FN DEL
+        &kp LBKT   &kp Q       &kp W  &kp E       &kp R        &kp T             &kp Y        &kp U           &kp I      &kp O    &kp P     &kp RBKT
+        &kp GRAVE  HRML(A,     S,     D,          F)           &kp G             &kp H        HRMR(J,         K,         L,       SEMI)     &kp SQT
+        &kp MINUS  &tt SWAP Z  &kp X  &kp C       &kp V        &kp B             &kp N        &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
+                                      &tt FN ESC  &tt EXT TAB  &tt LWR SPACE     &tt RSE RET  &tt MEDIA BSPC  &tt FN DEL
             >;
         };
 
@@ -83,11 +79,11 @@
 // ╰───────┴───────┴───────┼───────┼───────┼───────┤     ├───────┼───────┼───────┼───────────────────────╯
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
-        bindings = <
-    &trans  &kp N0   &kp N9     &kp N8  &kp N7  &kp N6     &trans  &trans  &trans     &trans   &trans  &trans
-    &trans  &kp N1   &kp N2     &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8     &kp N9   &kp N0  &trans
-    &trans  &kp DOT  &kp COMMA  &trans  &trans  &trans     &trans  &trans  &kp COMMA  &kp DOT  &trans  &trans
-                                &trans  &trans  &trans     &trans  &trans  &trans
+            bindings = <
+        &trans  &kp N0   &kp N9     &kp N8  &kp N7  &kp N6     &trans  &trans  &trans     &trans   &trans  &trans
+        &trans  &kp N1   &kp N2     &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8     &kp N9   &kp N0  &trans
+        &trans  &kp DOT  &kp COMMA  &trans  &trans  &trans     &trans  &trans  &kp COMMA  &kp DOT  &trans  &trans
+                                    &trans  &trans  &trans     &trans  &trans  &trans
             >;
         };
 
@@ -100,10 +96,10 @@
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-    &trans  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT     &trans     &trans  &kp GT     &kp RPAR   &kp RBRC  &kp RBKT  &trans
-    &trans  &kp AT     &kp EXCL   &kp HASH   &kp DLLR   &trans     &trans  &kp AMPS   &kp ASTRK  &kp BSLH  &kp PIPE  &trans
-    &trans  &kp TILDE  &kp MINUS  &kp UNDER  &kp PRCNT  &trans     &trans  &kp CARET  &kp EQUAL  &kp PLUS  &trans    &trans
-                                  &trans     &trans     &trans     &trans  &trans     &trans
+        &trans  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT     &trans     &trans  &kp GT     &kp RPAR   &kp RBRC  &kp RBKT  &trans
+        &trans  &kp AT     &kp EXCL   &kp HASH   &kp DLLR   &trans     &trans  &kp AMPS   &kp ASTRK  &kp BSLH  &kp PIPE  &trans
+        &trans  &kp TILDE  &kp MINUS  &kp UNDER  &kp PRCNT  &trans     &trans  &kp CARET  &kp EQUAL  &kp PLUS  &trans    &trans
+                                      &trans     &trans     &trans     &trans  &trans     &trans
             >;
         };
 
@@ -116,10 +112,10 @@
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-    &sys_reset   &trans        &trans        &trans        &trans        &trans           &trans  &trans  &trans  &trans  &trans  &sys_reset
-    &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans  &trans  &trans  &trans  &trans  &trans
-    &bootloader  &trans        &trans        &trans        &trans        &trans           &trans  &trans  &trans  &trans  &trans  &bootloader
-                                             &trans        &trans        &trans           &trans  &trans  &trans
+        &sys_reset   &trans        &trans        &trans        &trans        &trans           &trans  &trans  &trans  &trans  &trans  &sys_reset
+        &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans  &trans  &trans  &trans  &trans  &trans
+        &bootloader  &trans        &trans        &trans        &trans        &trans           &trans  &trans  &trans  &trans  &trans  &bootloader
+                                                 &trans        &trans        &trans           &trans  &trans  &trans
             >;
         };
 
@@ -132,10 +128,10 @@
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-    &kp ESC  TERM      DES_P     TSK_V      DES_N      &trans        &trans     &kp PG_UP  &kp UP    &kp PG_DN  &kp SLCK     &trans
-    &trans   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp K_APP     &kp K_APP  &kp LEFT   &kp DOWN  &kp RIGHT  &kp CLCK     &kp PSCRN
-    &trans   &kp DEL   &kp BSPC  &trans     &trans     &trans        &trans     &kp HOME   &kp INS   &kp END    &kp KP_NLCK  &trans
-                                 &trans     &trans     &trans        &trans     &trans     &trans
+        &kp ESC  TERM      DES_P     TSK_V      DES_N      &trans        &trans     &kp PG_UP  &kp UP    &kp PG_DN  &kp SLCK     &trans
+        &trans   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp K_APP     &kp K_APP  &kp LEFT   &kp DOWN  &kp RIGHT  &kp CLCK     &kp PSCRN
+        &trans   &kp DEL   &kp BSPC  &trans     &trans     &trans        &trans     &kp HOME   &kp INS   &kp END    &kp KP_NLCK  &trans
+                                     &trans     &trans     &trans        &trans     &trans     &trans
             >;
         };
 
@@ -148,10 +144,10 @@
 //                         |       |       |  ENT  |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &tog GAME
-    &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans  &trans  &kp RET     &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &tog GAME
+        &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &kp RET     &trans  &trans  &trans
             >;
         };
 
@@ -161,13 +157,13 @@
 // |   G   | SHIFT |   A   |   S   |   D   |   F   |     |   H   |   J   |   K   |   L   |   ;   |   '   |
 // |   B   |  ALT  |   Z   |   X   |   C   |   V   |     |   N   |   M   |   ,   |   .   |   /   | CAPS  |
 // ╰───────┴───────┴───────┼───────┼───────┼───────┤     ├───────┼───────┼───────┼───────────────────────╯
-//                         |  ESC  | CNTRL | SPACE |     |  ENT  | BKSP  |  DEL  |
+//                         |  ESC  | CTRL  | SPACE |     |  ENT  | BKSP  |  DEL  |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-    &kp T  &kp TAB    &kp Q  &kp W    &kp E      &kp R         &kp Y    &kp U     &kp I      &kp O    &kp P     &tog GAME
-    &kp G  &kp LSHFT  &kp A  &kp S    &kp D      &kp F         &kp H    &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-    &kp B  &kp LALT   &kp Z  &kp X    &kp C      &kp V         &kp N    &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp CLCK
-                             &kp ESC  &kp LCTRL  &kp SPACE     &kp RET  &kp BSPC  &kp DEL
+        &kp T  &kp TAB    &kp Q  &kp W    &kp E      &kp R         &kp Y    &kp U     &kp I      &kp O    &kp P     &tog GAME
+        &kp G  &kp LSHFT  &kp A  &kp S    &kp D      &kp F         &kp H    &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+        &kp B  &kp LALT   &kp Z  &kp X    &kp C      &kp V         &kp N    &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp CLCK
+                                 &kp ESC  &kp LCTRL  &kp SPACE     &kp RET  &kp BSPC  &kp DEL
             >;
         };
 
@@ -180,10 +176,10 @@
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-    &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans     &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans     &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                             &trans   &trans   &trans     &trans  &trans  &trans
+        &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans     &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans     &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+                                 &trans   &trans   &trans     &trans  &trans  &trans
             >;
         };
 
@@ -196,14 +192,14 @@
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &kp C_PREV    &kp C_PP    &kp C_NEXT    &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &kp C_BRI_DN  &trans      &kp C_BRI_UP  &trans  &trans
-                            &trans  &trans  &trans     &trans  &trans        &trans
+        &trans  &trans  &trans  &trans  &trans  &trans     &trans  &kp C_PREV    &kp C_PP    &kp C_NEXT    &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans     &trans  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans     &trans  &kp C_BRI_DN  &trans      &kp C_BRI_UP  &trans  &trans
+                                &trans  &trans  &trans     &trans  &trans        &trans
             >;
         };
 
-//        template_layer {
+        template_layer {
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮     ╭───────┬───────┬───────┬───────┬───────┬───────╮
 // |       |       |       |       |       |       |     |       |       |       |       |       |       |
 // |       |       |       |       |       |       |     |       |       |       |       |       |       |
@@ -211,12 +207,12 @@
 // ╰───────┴───────┴───────┼───────┼───────┼───────┤     ├───────┼───────┼───────┼───────────────────────╯
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
-//            bindings = <
-//    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-//    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-//    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-//                            &trans  &trans  &trans     &trans  &trans  &trans
-//            >;
-//        };
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans     &trans  &trans  &trans
+            >;
+        };
     };
 };
