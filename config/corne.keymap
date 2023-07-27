@@ -132,7 +132,7 @@
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-    &kp ESC  TERM      DES_P     TSK_V      DES_N      &trans        &trans     &kp PG_UP  &kp UP    &kp PG_DN   &kp SLCK     &trans
+    &kp ESC  TERM      DES_P     TSK_V      DES_N      &trans        &trans     &kp PG_UP  &kp UP    &kp PG_DN  &kp SLCK     &trans
     &trans   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp K_APP     &kp K_APP  &kp LEFT   &kp DOWN  &kp RIGHT  &kp CLCK     &kp PSCRN
     &trans   &kp DEL   &kp BSPC  &trans     &trans     &trans        &trans     &kp HOME   &kp INS   &kp END    &kp KP_NLCK  &trans
                                  &trans     &trans     &trans        &trans     &trans     &trans
@@ -203,7 +203,7 @@
             >;
         };
 
-        template_layer {
+//        template_layer {
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮     ╭───────┬───────┬───────┬───────┬───────┬───────╮
 // |       |       |       |       |       |       |     |       |       |       |       |       |       |
 // |       |       |       |       |       |       |     |       |       |       |       |       |       |
@@ -211,12 +211,12 @@
 // ╰───────┴───────┴───────┼───────┼───────┼───────┤     ├───────┼───────┼───────┼───────────────────────╯
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
-            bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans  &trans  &trans     &trans  &trans  &trans
-            >;
-        };
+//            bindings = <
+//    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+//    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+//    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+//                            &trans  &trans  &trans     &trans  &trans  &trans
+//            >;
+//        };
     };
 };
