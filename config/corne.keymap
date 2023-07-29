@@ -30,6 +30,14 @@
         layers = <0>; \
     };
 
+#define EXTRA_COMBO(NAME, BINDINGS, KEYPOS) \
+    combo_##NAME { \
+        timeout-ms = <50>; \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <4>; \
+    };
+
 / {
     behaviors {
         ht: homerow_mods {
@@ -62,8 +70,11 @@
 
     combos {
         compatible = "zmk,combos";
-        COMBO(bt_clr_l,    &bt BT_CLR,    0  5)
-        COMBO(bt_clr_r,    &bt BT_CLR,    6 35)
+        COMBO(bt_clr_l,     &bt BT_CLR,    5 24)
+        COMBO(bt_clr_r,     &bt BT_CLR,    6 35)
+        COMBO(delete,       &kp DEL,       13 14)
+        COMBO(backspace,    &kp BSPC,      14 15)
+        COMBO(enter,        &kp RET,       15 16)
     };
 
     keymap {
@@ -89,15 +100,15 @@
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮     ╭───────┬───────┬───────┬───────┬───────┬───────╮
 // |       |   0   |   9   |   8   |   7   |   6   |     |       |       |       |       |       |       |
 // |       |   1   |   2   |   3   |   4   |   5   |     |   6   |   7   |   8   |   9   |   0   |       |
-// |       |   .   |   ,   |       |       |       |     |       |       |   ,   |   .   |       |       |
+// |       |       |   .   |   ,   |  " "  |       |     |       |  " "  |   ,   |   .   |       |       |
 // ╰───────┴───────┴───────┼───────┼───────┼───────┤     ├───────┼───────┼───────┼───────────────────────╯
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-        &trans  &kp N0   &kp N9     &kp N8  &kp N7  &kp N6     &trans  &trans  &trans     &trans   &trans  &trans
-        &trans  &kp N1   &kp N2     &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8     &kp N9   &kp N0  &trans
-        &trans  &kp DOT  &kp COMMA  &trans  &trans  &trans     &trans  &trans  &kp COMMA  &kp DOT  &trans  &trans
-                                    &trans  &trans  &trans     &trans  &trans  &trans
+        &trans  &kp N0   &kp N9     &kp N8  &kp N7     &kp N6     &trans  &trans     &trans     &trans   &trans  &trans
+        &trans  &kp N1   &kp N2     &kp N3  &kp N4     &kp N5     &kp N6  &kp N7     &kp N8     &kp N9   &kp N0  &trans
+        &trans  &trans  &kp DOT  &kp COMMA  &kp SPACE  &trans     &trans  &kp SPACE  &kp COMMA  &kp DOT  &trans  &trans
+                                    &trans  &trans     &trans     &trans  &trans     &trans
             >;
         };
 
@@ -105,15 +116,15 @@
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮     ╭───────┬───────┬───────┬───────┬───────┬───────╮
 // |       |   [   |   {   |   (   |   <   |       |     |       |   >   |   )   |   }   |   ]   |       |
 // |       |   !   |   @   |   #   |   $   |       |     |       |   &   |   *   |   \   |   |   |       |
-// |       |   ~   |   -   |   _   |   %   |       |     |       |   ^   |   =   |   +   |       |       |
+// |       |       |   -   |   _   |   %   |       |     |       |   ^   |   =   |   +   |       |       |
 // ╰───────┴───────┴───────┼───────┼───────┼───────┤     ├───────┼───────┼───────┼───────────────────────╯
 //                         |       |       |       |     |       |       |       |
 //                         ╰───────┴───────┴───────╯     ╰───────┴───────┴───────╯
             bindings = <
-        &trans  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT     &trans     &trans  &kp GT     &kp RPAR   &kp RBRC  &kp RBKT  &trans
-        &trans  &kp AT     &kp EXCL   &kp HASH   &kp DLLR   &trans     &trans  &kp AMPS   &kp ASTRK  &kp BSLH  &kp PIPE  &trans
-        &trans  &kp TILDE  &kp MINUS  &kp UNDER  &kp PRCNT  &trans     &trans  &kp CARET  &kp EQUAL  &kp PLUS  &trans    &trans
-                                      &trans     &trans     &trans     &trans  &trans     &trans
+        &trans  &kp LBKT  &kp LBRC   &kp LPAR   &kp LT     &trans     &trans  &kp GT     &kp RPAR   &kp RBRC  &kp RBKT  &trans
+        &trans  &kp EXCL  &kp AT     &kp HASH   &kp DLLR   &trans     &trans  &kp AMPS   &kp ASTRK  &kp BSLH  &kp PIPE  &trans
+        &trans  &trans    &kp MINUS  &kp UNDER  &kp PRCNT  &trans     &trans  &kp CARET  &kp EQUAL  &kp PLUS  &trans    &trans
+                                     &trans     &trans     &trans     &trans  &trans     &trans
             >;
         };
 
