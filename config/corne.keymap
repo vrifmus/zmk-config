@@ -22,6 +22,14 @@
 #define FN      7
 #define MEDIA   8
 
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+    combo_##NAME { \
+        timeout-ms = <50>; \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <0>; \
+    };
+
 / {
     behaviors {
         ht: homerow_mods {
@@ -50,6 +58,12 @@
             if-layers = <1 2>;
             then-layer = <3>;
         };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        COMBO(bt_clr_l,    &bt BT_CLR,    0  5)
+        COMBO(bt_clr_r,    &bt BT_CLR,    6 35)
     };
 
     keymap {
